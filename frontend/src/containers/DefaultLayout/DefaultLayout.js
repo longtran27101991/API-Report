@@ -59,7 +59,7 @@ class DefaultLayout extends Component {
         items: [
           {
             name: 'API Report',
-            url: '/history',
+            url: '/apireport',
             icon: "icon-list"
           },
           {
@@ -76,7 +76,7 @@ class DefaultLayout extends Component {
 
           {
             name: 'API Report',
-            url: '/history',
+            url: '/apireport',
             icon: "icon-list"
           },
         ]

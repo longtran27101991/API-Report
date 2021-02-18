@@ -9,7 +9,6 @@ import {
   ModalFooter, CardBody, Table,
 } from "reactstrap";
 import Pagination from 'rc-pagination';
-import 'rc-pagination/assets/index.css';
 import client from "../../../api";
 
 // const TOKEN = 'access_token';

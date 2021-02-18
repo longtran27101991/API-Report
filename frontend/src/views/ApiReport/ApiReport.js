@@ -26,7 +26,7 @@ function getTotalPage(totalLength) {
   return Math.floor((totalLength - 1) / MAX_ROW) + 1;
 };
 
-class History extends Component {
+class ApiReport extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -37,7 +37,6 @@ class History extends Component {
       dataTable: [],
       searchTable: [],
       view: "",
-      //import file variables
       selectedImportFile: null,
       selectedImportFileName: "",
       checkImport: true,
@@ -142,30 +141,16 @@ class History extends Component {
     }
   };
 
-  handleEditRow = (type, word, id) => {
-    // axios.put(API_URL + '/api/' + type + 'Management/' + id, {
-    //   name: word.trim(),
-    //   user_id: user_id,
-    // }).then((response) => {
-    //   this.setState({wordEdit: ""});
-    //   if (response.data.message === "BAD") {
-    //     let modalErrorText = "Trùng lặp thông tin!";
-    //     this.setState({modalErrorText});
-    //     this.toggleError();
-    //   } else {
-    //     window.location.reload();
-    //   }
-    // })
-    //   .catch((error) => alert(error));
-  };
+  // handleEditRow = (type, word, id) => {
+  // };
 
-  deleteSelectedRow = (e, key, type) => {
-    this.handleDeleteRow(type, key);
-  };
+  // deleteSelectedRow = (e, key, type) => {
+  //   this.handleDeleteRow(type, key);
+  // };
 
-  handleDeleteRow = (type, id) => {
+  // handleDeleteRow = (type, id) => {
 
-  };
+  // };
 
   onChangeSearch = (changeEvent, type) => {
     const searchWord = changeEvent.target.value.toString();
@@ -208,53 +193,12 @@ class History extends Component {
     }
   };
 
-  handleFormAddKeyword = (type, keyword) => {
-    // axios.post(API_URL + '/api/' + type + 'Management', {
-    //   name: keyword.trim(),
-    //   user_id: user_id,
-    // }).then(response => {
-    //   if (response.data.message === "BAD") {
-    //     let modalErrorText = "Trùng lặp thông tin!";
-    //     this.setState({modalErrorText});
-    //     this.toggleError();
-    //   } else {
-    //     window.location.reload();
-    //   }
-    // }).catch(error => {
-    //   alert(error);
-    // })
-  };
+  // handleFormAddKeyword = (type, keyword) => {
+
+  // };
 
   handlePageClick = (pageClick) => {
     this.setState({currentPage: pageClick});
-  };
-
-  deActive = (e, id) => {
-    e.preventDefault();
-    client.put('/api/users/' + id, {email_activated: false})
-      .then((response) => {
-          alert("DeActive Successfully!");
-          window.location.reload();
-        }
-      )
-      .catch((error) => {
-        console.log(error)
-      });
-
-  };
-
-  active = (e, id) => {
-    e.preventDefault();
-    client.put('/api/users/' + id, {email_activated: true})
-      .then((response) => {
-          alert("Active Successfully!");
-          window.location.reload();
-        }
-      )
-      .catch((error) => {
-        console.log(error)
-      });
-
   };
 
 
@@ -299,29 +243,6 @@ class History extends Component {
   };
 
   handleFormImportKeyword = (type, keyword) => {
-    // axios.post(API_URL + '/api/' + type + 'Management', {
-    //   name: keyword.trim(),
-    //   user_id: user_id,
-    // })
-    //   .then((response) => {
-    //     let tmp = this.state[type];
-    //     if (response.data.message === "BAD") {
-    //       if (tmp.checkImport) {
-    //         let modalErrorText = "Đã loại bỏ các thông tin trùng lặp!";
-    //         this.setState({modalErrorText});
-    //         this.toggleError();
-    //         tmp.checkImport = false;
-    //         this.setState({type: tmp});
-    //       }
-    //     } else if (response.data.message === "OK") {
-    //       tmp.dataTable = response.data.data;
-    //       tmp.totalPage = getTotalPage(tmp.dataTable.length);
-    //       this.setState({type: tmp});
-    //     }
-    //   })
-    //   .catch((error) => {
-    //     alert(error);
-    //   });
   };
 
   handleSelectedFile = (event, type) => {
@@ -342,18 +263,31 @@ class History extends Component {
       <div className="animated fadeIn">
         <div className="card">
           <div className="card-header">
-            <CardTitle>LỊCH SỬ HOẠT ĐỘNG</CardTitle>
+            <CardTitle>API REPORT</CardTitle>
           </div>
           <CardBody>
             <div>
               <div className="float-left">
-                <div className="input-group" style={{borderRadius: "25px"}}>
-                  <div className="input-group-prepend">
+
+                <div className="input-group" >
+                  {/* repair */}
+                  {/* <div className="input-group-prepend">
                     <div className="input-group-text"><i className="fa fa-search"></i></div>
                   </div>
                   <Input className="form-control-range" name="" type="text" placeholder="email"
-                         value={this.state.search} onChange={(e) => this.onChangeSearch(e)}/>
+                         value={this.state.search} onChange={(e) => this.onChangeSearch(e)}/> */}
+                  <Input type = "select" style={{marginLeft:"20px"}}>
+                    <option>Status</option>
+                  </Input>
+                    
+                  <Input type = "select" style={{marginLeft:"20px"}}>
+                    <option>Select API</option>
+                  </Input>
+
+                  <Input type = "Text" placeHolder="From" style={{marginLeft:"20px"}} />
+                  <Input type = "Text" placeHolder="To" style={{marginLeft:"20px"}} />
                 </div>
+
               </div>
 
             </div>
@@ -362,11 +296,14 @@ class History extends Component {
             <Table striped bordered hover size="lg">
               <thead>
               <tr>
-                <th>Video</th>
-                <th>Is_Real</th>
-                <th>Type_Fake</th>
-                <th>Created_Time</th>
-                <th>Updated_Time</th>
+                <th>Request time</th>
+                <th>API</th>
+                <th>Uri</th>
+                <th>Method</th>
+                <th>Request body</th>
+                <th>Status</th>
+                <th>Request body</th>
+                <th>Latency (ms)</th>
               </tr>
               </thead>
               {this.state.dataTable.length > 0 &&
@@ -375,6 +312,12 @@ class History extends Component {
               </tbody>
               }
             </Table>
+            {/* repair */}
+            <span>rows per page</span>
+            <Input type = "select" style={{width:"70px", margin:"10px"}}>
+              <option>10</option>
+            </Input>
+
             <Pagination onChange={(pageClick) => this.handlePageClick(pageClick)}
                         current={this.state.currentPage}
                         total={this.state.totalPage * 10}/>
@@ -408,9 +351,10 @@ class History extends Component {
             </Button>
           </ModalFooter>
         </Modal>
+
       </div>
     );
   }
 }
 
-export default History;
+export default ApiReport;
