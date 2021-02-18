@@ -1,0 +1,430 @@
+{"message":"Error handler now registers to handle all errors","level":"debug"}
+{"message":"Error handler now registers to handle all errors","level":"debug"}
+{"message":"Uncaught exception was caught with the following error ReferenceError: next is not defined","level":"debug"}
+{"message":"A non-trusted (not operational) error was detect, this will likely to kill the process - please analyze this issue and act thoughtfully","level":"debug"}
+{"message":"Error handler is reporting a new error: ReferenceError: next is not defined","level":"debug"}
+{"message":"Error handler concluded that this error is not trusted thus exiting","level":"debug"}
+{"message":"Uncaught exception was caught with the following error ReferenceError: saveToCache is not defined","level":"debug"}
+{"message":"A non-trusted (not operational) error was detect, this will likely to kill the process - please analyze this issue and act thoughtfully","level":"debug"}
+{"message":"Error handler is reporting a new error: ReferenceError: saveToCache is not defined","level":"debug"}
+{"message":"Error handler concluded that this error is not trusted thus exiting","level":"debug"}
+{"message":"Error handler now registers to handle all errors","level":"debug"}
+{"message":"Uncaught exception was caught with the following error ReferenceError: next is not defined","level":"debug"}
+{"message":"A non-trusted (not operational) error was detect, this will likely to kill the process - please analyze this issue and act thoughtfully","level":"debug"}
+{"message":"Error handler is reporting a new error: ReferenceError: next is not defined","level":"debug"}
+{"message":"Error handler concluded that this error is not trusted thus exiting","level":"debug"}
+{"message":"New request /sockjs-node/527/dwrxxn4k/websocket","level":"info"}
+{"message":"Exception was caught by express middleware","level":"debug"}
+{"message":"Error: ENOENT: no such file or directory, stat '/Users/long/Documents/GitHub/server/build/index.html'","level":"debug"}
+{"message":"A non-trusted (not operational) error was detect, this will likely to kill the process - please analyze this issue and act thoughtfully","level":"debug"}
+{"message":"Error handler is reporting a new error: Error: ENOENT: no such file or directory, stat '/Users/long/Documents/GitHub/server/build/index.html'","level":"debug"}
+{"message":"New request /favicon.ico","level":"info"}
+{"message":"Exception was caught by express middleware","level":"debug"}
+{"message":"Error: ENOENT: no such file or directory, stat '/Users/long/Documents/GitHub/server/build/index.html'","level":"debug"}
+{"message":"A non-trusted (not operational) error was detect, this will likely to kill the process - please analyze this issue and act thoughtfully","level":"debug"}
+{"message":"Error handler is reporting a new error: Error: ENOENT: no such file or directory, stat '/Users/long/Documents/GitHub/server/build/index.html'","level":"debug"}
+{"message":"Error handler now registers to handle all errors","level":"debug"}
+{"message":"Uncaught exception was caught with the following error ReferenceError: next is not defined","level":"debug"}
+{"message":"A non-trusted (not operational) error was detect, this will likely to kill the process - please analyze this issue and act thoughtfully","level":"debug"}
+{"message":"Error handler is reporting a new error: ReferenceError: next is not defined","level":"debug"}
+{"message":"Error handler concluded that this error is not trusted thus exiting","level":"debug"}
+{"message":"New request /api/login","level":"info"}
+{"message":"Error handler now registers to handle all errors","level":"debug"}
+{"message":"Uncaught exception was caught with the following error ReferenceError: next is not defined","level":"debug"}
+{"message":"A non-trusted (not operational) error was detect, this will likely to kill the process - please analyze this issue and act thoughtfully","level":"debug"}
+{"message":"Error handler is reporting a new error: ReferenceError: next is not defined","level":"debug"}
+{"message":"Error handler concluded that this error is not trusted thus exiting","level":"debug"}
+{"message":"New request /api/login","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"Error handler now registers to handle all errors","level":"debug"}
+{"message":"Uncaught exception was caught with the following error Error: listen EADDRINUSE: address already in use :::5000","level":"debug"}
+{"message":"A non-trusted (not operational) error was detect, this will likely to kill the process - please analyze this issue and act thoughtfully","level":"debug"}
+{"message":"Error handler is reporting a new error: Error: listen EADDRINUSE: address already in use :::5000","level":"debug"}
+{"message":"Error handler concluded that this error is not trusted thus exiting","level":"debug"}
+{"message":"Uncaught exception was caught with the following error ReferenceError: next is not defined","level":"debug"}
+{"message":"A non-trusted (not operational) error was detect, this will likely to kill the process - please analyze this issue and act thoughtfully","level":"debug"}
+{"message":"Error handler is reporting a new error: ReferenceError: next is not defined","level":"debug"}
+{"message":"Error handler concluded that this error is not trusted thus exiting","level":"debug"}
+{"message":"Error handler now registers to handle all errors","level":"debug"}
+{"message":"Uncaught exception was caught with the following error Error: listen EADDRINUSE: address already in use :::5000","level":"debug"}
+{"message":"A non-trusted (not operational) error was detect, this will likely to kill the process - please analyze this issue and act thoughtfully","level":"debug"}
+{"message":"Error handler is reporting a new error: Error: listen EADDRINUSE: address already in use :::5000","level":"debug"}
+{"message":"Error handler concluded that this error is not trusted thus exiting","level":"debug"}
+{"message":"Uncaught exception was caught with the following error ReferenceError: next is not defined","level":"debug"}
+{"message":"A non-trusted (not operational) error was detect, this will likely to kill the process - please analyze this issue and act thoughtfully","level":"debug"}
+{"message":"Error handler is reporting a new error: ReferenceError: next is not defined","level":"debug"}
+{"message":"Error handler concluded that this error is not trusted thus exiting","level":"debug"}
+{"message":"Error handler now registers to handle all errors","level":"debug"}
+{"message":"Uncaught exception was caught with the following error Error: listen EADDRINUSE: address already in use :::5000","level":"debug"}
+{"message":"A non-trusted (not operational) error was detect, this will likely to kill the process - please analyze this issue and act thoughtfully","level":"debug"}
+{"message":"Error handler is reporting a new error: Error: listen EADDRINUSE: address already in use :::5000","level":"debug"}
+{"message":"Error handler concluded that this error is not trusted thus exiting","level":"debug"}
+{"message":"Uncaught exception was caught with the following error ReferenceError: next is not defined","level":"debug"}
+{"message":"A non-trusted (not operational) error was detect, this will likely to kill the process - please analyze this issue and act thoughtfully","level":"debug"}
+{"message":"Error handler is reporting a new error: ReferenceError: next is not defined","level":"debug"}
+{"message":"Error handler concluded that this error is not trusted thus exiting","level":"debug"}
+{"message":"Error handler now registers to handle all errors","level":"debug"}
+{"message":"Uncaught exception was caught with the following error Error: listen EADDRINUSE: address already in use :::5000","level":"debug"}
+{"message":"A non-trusted (not operational) error was detect, this will likely to kill the process - please analyze this issue and act thoughtfully","level":"debug"}
+{"message":"Error handler is reporting a new error: Error: listen EADDRINUSE: address already in use :::5000","level":"debug"}
+{"message":"Error handler concluded that this error is not trusted thus exiting","level":"debug"}
+{"message":"Uncaught exception was caught with the following error ReferenceError: next is not defined","level":"debug"}
+{"message":"A non-trusted (not operational) error was detect, this will likely to kill the process - please analyze this issue and act thoughtfully","level":"debug"}
+{"message":"Error handler is reporting a new error: ReferenceError: next is not defined","level":"debug"}
+{"message":"Error handler concluded that this error is not trusted thus exiting","level":"debug"}
+{"message":"Error handler now registers to handle all errors","level":"debug"}
+{"message":"Uncaught exception was caught with the following error Error: listen EADDRINUSE: address already in use :::5000","level":"debug"}
+{"message":"A non-trusted (not operational) error was detect, this will likely to kill the process - please analyze this issue and act thoughtfully","level":"debug"}
+{"message":"Error handler is reporting a new error: Error: listen EADDRINUSE: address already in use :::5000","level":"debug"}
+{"message":"Error handler concluded that this error is not trusted thus exiting","level":"debug"}
+{"message":"Uncaught exception was caught with the following error ReferenceError: next is not defined","level":"debug"}
+{"message":"A non-trusted (not operational) error was detect, this will likely to kill the process - please analyze this issue and act thoughtfully","level":"debug"}
+{"message":"Error handler is reporting a new error: ReferenceError: next is not defined","level":"debug"}
+{"message":"Error handler concluded that this error is not trusted thus exiting","level":"debug"}
+{"message":"Error handler now registers to handle all errors","level":"debug"}
+{"message":"Uncaught exception was caught with the following error Error: listen EADDRINUSE: address already in use :::5000","level":"debug"}
+{"message":"A non-trusted (not operational) error was detect, this will likely to kill the process - please analyze this issue and act thoughtfully","level":"debug"}
+{"message":"Error handler is reporting a new error: Error: listen EADDRINUSE: address already in use :::5000","level":"debug"}
+{"message":"Error handler concluded that this error is not trusted thus exiting","level":"debug"}
+{"message":"Uncaught exception was caught with the following error ReferenceError: next is not defined","level":"debug"}
+{"message":"A non-trusted (not operational) error was detect, this will likely to kill the process - please analyze this issue and act thoughtfully","level":"debug"}
+{"message":"Error handler is reporting a new error: ReferenceError: next is not defined","level":"debug"}
+{"message":"Error handler concluded that this error is not trusted thus exiting","level":"debug"}
+{"message":"Error handler now registers to handle all errors","level":"debug"}
+{"message":"Uncaught exception was caught with the following error ReferenceError: next is not defined","level":"debug"}
+{"message":"A non-trusted (not operational) error was detect, this will likely to kill the process - please analyze this issue and act thoughtfully","level":"debug"}
+{"message":"Error handler is reporting a new error: ReferenceError: next is not defined","level":"debug"}
+{"message":"Error handler concluded that this error is not trusted thus exiting","level":"debug"}
+{"message":"New request /","level":"info"}
+{"message":"Exception was caught by express middleware","level":"debug"}
+{"message":"Error: ENOENT: no such file or directory, stat '/Users/long/Documents/GitHub/server/build/index.html'","level":"debug"}
+{"message":"A non-trusted (not operational) error was detect, this will likely to kill the process - please analyze this issue and act thoughtfully","level":"debug"}
+{"message":"Error handler is reporting a new error: Error: ENOENT: no such file or directory, stat '/Users/long/Documents/GitHub/server/build/index.html'","level":"debug"}
+{"message":"Error handler now registers to handle all errors","level":"debug"}
+{"message":"Uncaught exception was caught with the following error Error: listen EADDRINUSE: address already in use :::5000","level":"debug"}
+{"message":"A non-trusted (not operational) error was detect, this will likely to kill the process - please analyze this issue and act thoughtfully","level":"debug"}
+{"message":"Error handler is reporting a new error: Error: listen EADDRINUSE: address already in use :::5000","level":"debug"}
+{"message":"Error handler concluded that this error is not trusted thus exiting","level":"debug"}
+{"message":"Uncaught exception was caught with the following error ReferenceError: next is not defined","level":"debug"}
+{"message":"A non-trusted (not operational) error was detect, this will likely to kill the process - please analyze this issue and act thoughtfully","level":"debug"}
+{"message":"Error handler is reporting a new error: ReferenceError: next is not defined","level":"debug"}
+{"message":"Error handler concluded that this error is not trusted thus exiting","level":"debug"}
+{"message":"Error handler now registers to handle all errors","level":"debug"}
+{"message":"Uncaught exception was caught with the following error ReferenceError: next is not defined","level":"debug"}
+{"message":"A non-trusted (not operational) error was detect, this will likely to kill the process - please analyze this issue and act thoughtfully","level":"debug"}
+{"message":"Error handler is reporting a new error: ReferenceError: next is not defined","level":"debug"}
+{"message":"Error handler concluded that this error is not trusted thus exiting","level":"debug"}
+{"message":"New request /api/login","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"Error handler now registers to handle all errors","level":"debug"}
+{"message":"Uncaught exception was caught with the following error ReferenceError: next is not defined","level":"debug"}
+{"message":"A non-trusted (not operational) error was detect, this will likely to kill the process - please analyze this issue and act thoughtfully","level":"debug"}
+{"message":"Error handler is reporting a new error: ReferenceError: next is not defined","level":"debug"}
+{"message":"Error handler concluded that this error is not trusted thus exiting","level":"debug"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/login","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement/5f2bc626ae711a19b8f9218d","level":"info"}
+{"message":"New request /api/projectManagement/5f2bc626ae711a19b8f9218d","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement/5f2bc626ae711a19b8f9218d","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"Error handler now registers to handle all errors","level":"debug"}
+{"message":"Uncaught exception was caught with the following error ReferenceError: next is not defined","level":"debug"}
+{"message":"A non-trusted (not operational) error was detect, this will likely to kill the process - please analyze this issue and act thoughtfully","level":"debug"}
+{"message":"Error handler is reporting a new error: ReferenceError: next is not defined","level":"debug"}
+{"message":"Error handler concluded that this error is not trusted thus exiting","level":"debug"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"Error handler now registers to handle all errors","level":"debug"}
+{"message":"Uncaught exception was caught with the following error ReferenceError: next is not defined","level":"debug"}
+{"message":"A non-trusted (not operational) error was detect, this will likely to kill the process - please analyze this issue and act thoughtfully","level":"debug"}
+{"message":"Error handler is reporting a new error: ReferenceError: next is not defined","level":"debug"}
+{"message":"Error handler concluded that this error is not trusted thus exiting","level":"debug"}
+{"message":"New request /api/login","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"Error handler now registers to handle all errors","level":"debug"}
+{"message":"Uncaught exception was caught with the following error ReferenceError: next is not defined","level":"debug"}
+{"message":"A non-trusted (not operational) error was detect, this will likely to kill the process - please analyze this issue and act thoughtfully","level":"debug"}
+{"message":"Error handler is reporting a new error: ReferenceError: next is not defined","level":"debug"}
+{"message":"Error handler concluded that this error is not trusted thus exiting","level":"debug"}
+{"message":"New request /api/login","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"Error handler now registers to handle all errors","level":"debug"}
+{"message":"Uncaught exception was caught with the following error ReferenceError: next is not defined","level":"debug"}
+{"message":"A non-trusted (not operational) error was detect, this will likely to kill the process - please analyze this issue and act thoughtfully","level":"debug"}
+{"message":"Error handler is reporting a new error: ReferenceError: next is not defined","level":"debug"}
+{"message":"Error handler concluded that this error is not trusted thus exiting","level":"debug"}
+{"message":"Error handler now registers to handle all errors","level":"debug"}
+{"message":"Uncaught exception was caught with the following error ReferenceError: next is not defined","level":"debug"}
+{"message":"A non-trusted (not operational) error was detect, this will likely to kill the process - please analyze this issue and act thoughtfully","level":"debug"}
+{"message":"Error handler is reporting a new error: ReferenceError: next is not defined","level":"debug"}
+{"message":"Error handler concluded that this error is not trusted thus exiting","level":"debug"}
+{"message":"Uncaught exception was caught with the following error ReferenceError: saveToCache is not defined","level":"debug"}
+{"message":"A non-trusted (not operational) error was detect, this will likely to kill the process - please analyze this issue and act thoughtfully","level":"debug"}
+{"message":"Error handler is reporting a new error: ReferenceError: saveToCache is not defined","level":"debug"}
+{"message":"Error handler concluded that this error is not trusted thus exiting","level":"debug"}
+{"message":"New request /auth/register","level":"info"}
+{"message":"Error handler now registers to handle all errors","level":"debug"}
+{"message":"Uncaught exception was caught with the following error ReferenceError: next is not defined","level":"debug"}
+{"message":"A non-trusted (not operational) error was detect, this will likely to kill the process - please analyze this issue and act thoughtfully","level":"debug"}
+{"message":"Error handler is reporting a new error: ReferenceError: next is not defined","level":"debug"}
+{"message":"Error handler concluded that this error is not trusted thus exiting","level":"debug"}
+{"message":"New request /auth/register","level":"info"}
+{"message":"Error handler now registers to handle all errors","level":"debug"}
+{"message":"Uncaught exception was caught with the following error ReferenceError: next is not defined","level":"debug"}
+{"message":"A non-trusted (not operational) error was detect, this will likely to kill the process - please analyze this issue and act thoughtfully","level":"debug"}
+{"message":"Error handler is reporting a new error: ReferenceError: next is not defined","level":"debug"}
+{"message":"Error handler concluded that this error is not trusted thus exiting","level":"debug"}
+{"message":"New request /auth/login","level":"info"}
+{"message":"New request /auth/login","level":"info"}
+{"message":"New request /auth/login","level":"info"}
+{"message":"New request /auth/login","level":"info"}
+{"message":"New request /auth/login","level":"info"}
+{"message":"New request /api/projectManagement","level":"info"}
+{"message":"Error handler now registers to handle all errors","level":"debug"}
+{"message":"Uncaught exception was caught with the following error Error: Redis connection to 127.0.0.1:6379 failed - connect ECONNREFUSED 127.0.0.1:6379","level":"debug"}
+{"message":"A non-trusted (not operational) error was detect, this will likely to kill the process - please analyze this issue and act thoughtfully","level":"debug"}
+{"message":"Error handler is reporting a new error: Error: Redis connection to 127.0.0.1:6379 failed - connect ECONNREFUSED 127.0.0.1:6379","level":"debug"}
+{"message":"Error handler concluded that this error is not trusted thus exiting","level":"debug"}
+{"message":"Uncaught exception was caught with the following error Error: Redis connection to 127.0.0.1:6379 failed - connect ECONNREFUSED 127.0.0.1:6379","level":"debug"}
+{"message":"A non-trusted (not operational) error was detect, this will likely to kill the process - please analyze this issue and act thoughtfully","level":"debug"}
+{"message":"Error handler is reporting a new error: Error: Redis connection to 127.0.0.1:6379 failed - connect ECONNREFUSED 127.0.0.1:6379","level":"debug"}
+{"message":"Error handler concluded that this error is not trusted thus exiting","level":"debug"}
+{"message":"Uncaught exception was caught with the following error ReferenceError: next is not defined","level":"debug"}
+{"message":"A non-trusted (not operational) error was detect, this will likely to kill the process - please analyze this issue and act thoughtfully","level":"debug"}
+{"message":"Error handler is reporting a new error: ReferenceError: next is not defined","level":"debug"}
+{"message":"Error handler concluded that this error is not trusted thus exiting","level":"debug"}
+{"message":"Uncaught exception was caught with the following error Error: Redis connection to 127.0.0.1:6379 failed - connect ECONNREFUSED 127.0.0.1:6379","level":"debug"}
+{"message":"A non-trusted (not operational) error was detect, this will likely to kill the process - please analyze this issue and act thoughtfully","level":"debug"}
+{"message":"Error handler is reporting a new error: Error: Redis connection to 127.0.0.1:6379 failed - connect ECONNREFUSED 127.0.0.1:6379","level":"debug"}
+{"message":"Error handler concluded that this error is not trusted thus exiting","level":"debug"}
+{"message":"Uncaught exception was caught with the following error ReferenceError: saveToCache is not defined","level":"debug"}
+{"message":"A non-trusted (not operational) error was detect, this will likely to kill the process - please analyze this issue and act thoughtfully","level":"debug"}
+{"message":"Error handler is reporting a new error: ReferenceError: saveToCache is not defined","level":"debug"}
+{"message":"Error handler concluded that this error is not trusted thus exiting","level":"debug"}
+{"message":"Uncaught exception was caught with the following error Error: Redis connection to 127.0.0.1:6379 failed - connect ECONNREFUSED 127.0.0.1:6379","level":"debug"}
+{"message":"A non-trusted (not operational) error was detect, this will likely to kill the process - please analyze this issue and act thoughtfully","level":"debug"}
+{"message":"Error handler is reporting a new error: Error: Redis connection to 127.0.0.1:6379 failed - connect ECONNREFUSED 127.0.0.1:6379","level":"debug"}
+{"message":"Error handler concluded that this error is not trusted thus exiting","level":"debug"}
+{"message":"Uncaught exception was caught with the following error Error: Redis connection to 127.0.0.1:6379 failed - connect ECONNREFUSED 127.0.0.1:6379","level":"debug"}
+{"message":"A non-trusted (not operational) error was detect, this will likely to kill the process - please analyze this issue and act thoughtfully","level":"debug"}
+{"message":"Error handler is reporting a new error: Error: Redis connection to 127.0.0.1:6379 failed - connect ECONNREFUSED 127.0.0.1:6379","level":"debug"}
+{"message":"Error handler concluded that this error is not trusted thus exiting","level":"debug"}
+{"message":"Uncaught exception was caught with the following error Error: Redis connection to 127.0.0.1:6379 failed - connect ECONNREFUSED 127.0.0.1:6379","level":"debug"}
+{"message":"A non-trusted (not operational) error was detect, this will likely to kill the process - please analyze this issue and act thoughtfully","level":"debug"}
+{"message":"Error handler is reporting a new error: Error: Redis connection to 127.0.0.1:6379 failed - connect ECONNREFUSED 127.0.0.1:6379","level":"debug"}
+{"message":"Error handler concluded that this error is not trusted thus exiting","level":"debug"}
+{"message":"Uncaught exception was caught with the following error Error: Redis connection to 127.0.0.1:6379 failed - connect ECONNREFUSED 127.0.0.1:6379","level":"debug"}
+{"message":"A non-trusted (not operational) error was detect, this will likely to kill the process - please analyze this issue and act thoughtfully","level":"debug"}
+{"message":"Error handler is reporting a new error: Error: Redis connection to 127.0.0.1:6379 failed - connect ECONNREFUSED 127.0.0.1:6379","level":"debug"}
+{"message":"Error handler concluded that this error is not trusted thus exiting","level":"debug"}
+{"message":"Uncaught exception was caught with the following error Error: Redis connection to 127.0.0.1:6379 failed - connect ECONNREFUSED 127.0.0.1:6379","level":"debug"}
+{"message":"A non-trusted (not operational) error was detect, this will likely to kill the process - please analyze this issue and act thoughtfully","level":"debug"}
+{"message":"Error handler is reporting a new error: Error: Redis connection to 127.0.0.1:6379 failed - connect ECONNREFUSED 127.0.0.1:6379","level":"debug"}
+{"message":"Error handler concluded that this error is not trusted thus exiting","level":"debug"}
+{"message":"Uncaught exception was caught with the following error Error: Redis connection to 127.0.0.1:6379 failed - connect ECONNREFUSED 127.0.0.1:6379","level":"debug"}
+{"message":"A non-trusted (not operational) error was detect, this will likely to kill the process - please analyze this issue and act thoughtfully","level":"debug"}
+{"message":"Error handler is reporting a new error: Error: Redis connection to 127.0.0.1:6379 failed - connect ECONNREFUSED 127.0.0.1:6379","level":"debug"}
+{"message":"Error handler concluded that this error is not trusted thus exiting","level":"debug"}
+{"message":"Uncaught exception was caught with the following error Error: Redis connection to 127.0.0.1:6379 failed - connect ECONNREFUSED 127.0.0.1:6379","level":"debug"}
+{"message":"A non-trusted (not operational) error was detect, this will likely to kill the process - please analyze this issue and act thoughtfully","level":"debug"}
+{"message":"Error handler is reporting a new error: Error: Redis connection to 127.0.0.1:6379 failed - connect ECONNREFUSED 127.0.0.1:6379","level":"debug"}
+{"message":"Error handler concluded that this error is not trusted thus exiting","level":"debug"}
+{"message":"Uncaught exception was caught with the following error Error: Redis connection to 127.0.0.1:6379 failed - connect ECONNREFUSED 127.0.0.1:6379","level":"debug"}
+{"message":"A non-trusted (not operational) error was detect, this will likely to kill the process - please analyze this issue and act thoughtfully","level":"debug"}
+{"message":"Error handler is reporting a new error: Error: Redis connection to 127.0.0.1:6379 failed - connect ECONNREFUSED 127.0.0.1:6379","level":"debug"}
+{"message":"Error handler concluded that this error is not trusted thus exiting","level":"debug"}
+{"message":"Uncaught exception was caught with the following error Error: Redis connection to 127.0.0.1:6379 failed - connect ECONNREFUSED 127.0.0.1:6379","level":"debug"}
+{"message":"A non-trusted (not operational) error was detect, this will likely to kill the process - please analyze this issue and act thoughtfully","level":"debug"}
+{"message":"Error handler is reporting a new error: Error: Redis connection to 127.0.0.1:6379 failed - connect ECONNREFUSED 127.0.0.1:6379","level":"debug"}
+{"message":"Error handler concluded that this error is not trusted thus exiting","level":"debug"}
+{"message":"Uncaught exception was caught with the following error Error: Redis connection to 127.0.0.1:6379 failed - connect ECONNREFUSED 127.0.0.1:6379","level":"debug"}
+{"message":"A non-trusted (not operational) error was detect, this will likely to kill the process - please analyze this issue and act thoughtfully","level":"debug"}
+{"message":"Error handler is reporting a new error: Error: Redis connection to 127.0.0.1:6379 failed - connect ECONNREFUSED 127.0.0.1:6379","level":"debug"}
+{"message":"Error handler concluded that this error is not trusted thus exiting","level":"debug"}
+{"message":"New request /auth/login","level":"info"}
+{"message":"New request /api/videoTaggingManagement","level":"info"}
+{"message":"Uncaught exception was caught with the following error Error: Redis connection to 127.0.0.1:6379 failed - connect ECONNREFUSED 127.0.0.1:6379","level":"debug"}
+{"message":"A non-trusted (not operational) error was detect, this will likely to kill the process - please analyze this issue and act thoughtfully","level":"debug"}
+{"message":"Error handler is reporting a new error: Error: Redis connection to 127.0.0.1:6379 failed - connect ECONNREFUSED 127.0.0.1:6379","level":"debug"}
+{"message":"Error handler concluded that this error is not trusted thus exiting","level":"debug"}
+{"message":"New request /auth/login","level":"info"}
+{"message":"New request /api/videoTaggingManagement","level":"info"}
+{"message":"New request /api/users","level":"info"}
+{"message":"New request /api/historyManagement","level":"info"}
+{"message":"New request /api/users","level":"info"}
+{"message":"New request /api/users","level":"info"}
+{"message":"New request /api/users","level":"info"}
+{"message":"Uncaught exception was caught with the following error Error: Redis connection to 127.0.0.1:6379 failed - connect ECONNREFUSED 127.0.0.1:6379","level":"debug"}
+{"message":"A non-trusted (not operational) error was detect, this will likely to kill the process - please analyze this issue and act thoughtfully","level":"debug"}
+{"message":"Error handler is reporting a new error: Error: Redis connection to 127.0.0.1:6379 failed - connect ECONNREFUSED 127.0.0.1:6379","level":"debug"}
+{"message":"Error handler concluded that this error is not trusted thus exiting","level":"debug"}
+{"message":"New request /api/users","level":"info"}
+{"message":"New request /api/historyManagement","level":"info"}
+{"message":"New request /api/historyManagement","level":"info"}
+{"message":"New request /api/users","level":"info"}
+{"message":"New request /api/historyManagement","level":"info"}
+{"message":"New request /api/users","level":"info"}
+{"message":"New request /api/historyManagement","level":"info"}
+{"message":"New request /api/users","level":"info"}
+{"message":"New request /api/historyManagement","level":"info"}
+{"message":"New request /api/historyManagement","level":"info"}
+{"message":"New request /api/users","level":"info"}
+{"message":"New request /api/historyManagement","level":"info"}
+{"message":"New request /api/users","level":"info"}
+{"message":"New request /api/historyManagement","level":"info"}
+{"message":"New request /api/historyManagement","level":"info"}
+{"message":"New request /api/historyManagement","level":"info"}
+{"message":"New request /api/historyManagement","level":"info"}
+{"message":"Uncaught exception was caught with the following error Error: Redis connection to 127.0.0.1:6379 failed - connect ECONNREFUSED 127.0.0.1:6379","level":"debug"}
+{"message":"A non-trusted (not operational) error was detect, this will likely to kill the process - please analyze this issue and act thoughtfully","level":"debug"}
+{"message":"Error handler is reporting a new error: Error: Redis connection to 127.0.0.1:6379 failed - connect ECONNREFUSED 127.0.0.1:6379","level":"debug"}
+{"message":"Error handler concluded that this error is not trusted thus exiting","level":"debug"}
+{"message":"New request /api/historyManagement","level":"info"}
+{"message":"New request /api/historyManagement","level":"info"}
+{"message":"New request /api/historyManagement","level":"info"}
+{"message":"New request /api/historyManagement","level":"info"}
+{"message":"New request /api/historyManagement","level":"info"}
+{"message":"New request /auth/login","level":"info"}
+{"message":"New request /api/historyManagement","level":"info"}
+{"message":"New request /api/users","level":"info"}
+{"message":"New request /api/historyManagement","level":"info"}
+{"message":"New request /api/historyManagement","level":"info"}
+{"message":"New request /api/historyManagement","level":"info"}
+{"message":"New request /api/historyManagement","level":"info"}
+{"message":"New request /api/historyManagement","level":"info"}
+{"message":"New request /api/historyManagement","level":"info"}
+{"message":"New request /api/historyManagement","level":"info"}
+{"message":"New request /api/historyManagement","level":"info"}
+{"message":"New request /api/historyManagement","level":"info"}
+{"message":"New request /api/historyManagement","level":"info"}
+{"message":"Uncaught exception was caught with the following error Error: Redis connection to 127.0.0.1:6379 failed - connect ECONNREFUSED 127.0.0.1:6379","level":"debug"}
+{"message":"A non-trusted (not operational) error was detect, this will likely to kill the process - please analyze this issue and act thoughtfully","level":"debug"}
+{"message":"Error handler is reporting a new error: Error: Redis connection to 127.0.0.1:6379 failed - connect ECONNREFUSED 127.0.0.1:6379","level":"debug"}
+{"message":"Error handler concluded that this error is not trusted thus exiting","level":"debug"}
+{"message":"New request /api/historyManagement","level":"info"}
+{"message":"New request /api/historyManagement","level":"info"}
+{"message":"New request /api/historyManagement","level":"info"}
+{"message":"Error handler now registers to handle all errors","level":"debug"}
+{"message":"Uncaught exception was caught with the following error Error: Redis connection to 127.0.0.1:6379 failed - connect ECONNREFUSED 127.0.0.1:6379","level":"debug"}
+{"message":"A non-trusted (not operational) error was detect, this will likely to kill the process - please analyze this issue and act thoughtfully","level":"debug"}
+{"message":"Error handler is reporting a new error: Error: Redis connection to 127.0.0.1:6379 failed - connect ECONNREFUSED 127.0.0.1:6379","level":"debug"}
+{"message":"Error handler concluded that this error is not trusted thus exiting","level":"debug"}
+{"message":"Uncaught exception was caught with the following error ReferenceError: next is not defined","level":"debug"}
+{"message":"A non-trusted (not operational) error was detect, this will likely to kill the process - please analyze this issue and act thoughtfully","level":"debug"}
+{"message":"Error handler is reporting a new error: ReferenceError: next is not defined","level":"debug"}
+{"message":"Error handler concluded that this error is not trusted thus exiting","level":"debug"}
+{"message":"Uncaught exception was caught with the following error Error: Redis connection to 127.0.0.1:6379 failed - connect ECONNREFUSED 127.0.0.1:6379","level":"debug"}
+{"message":"A non-trusted (not operational) error was detect, this will likely to kill the process - please analyze this issue and act thoughtfully","level":"debug"}
+{"message":"Error handler is reporting a new error: Error: Redis connection to 127.0.0.1:6379 failed - connect ECONNREFUSED 127.0.0.1:6379","level":"debug"}
+{"message":"Error handler concluded that this error is not trusted thus exiting","level":"debug"}
+{"message":"Uncaught exception was caught with the following error Error: Redis connection to 127.0.0.1:6379 failed - connect ECONNREFUSED 127.0.0.1:6379","level":"debug"}
+{"message":"A non-trusted (not operational) error was detect, this will likely to kill the process - please analyze this issue and act thoughtfully","level":"debug"}
+{"message":"Error handler is reporting a new error: Error: Redis connection to 127.0.0.1:6379 failed - connect ECONNREFUSED 127.0.0.1:6379","level":"debug"}
+{"message":"Error handler concluded that this error is not trusted thus exiting","level":"debug"}
+{"message":"Uncaught exception was caught with the following error Error: Redis connection to 127.0.0.1:6379 failed - connect ECONNREFUSED 127.0.0.1:6379","level":"debug"}
+{"message":"A non-trusted (not operational) error was detect, this will likely to kill the process - please analyze this issue and act thoughtfully","level":"debug"}
+{"message":"Error handler is reporting a new error: Error: Redis connection to 127.0.0.1:6379 failed - connect ECONNREFUSED 127.0.0.1:6379","level":"debug"}
+{"message":"Error handler concluded that this error is not trusted thus exiting","level":"debug"}
+{"message":"Uncaught exception was caught with the following error Error: Redis connection to 127.0.0.1:6379 failed - connect ECONNREFUSED 127.0.0.1:6379","level":"debug"}
+{"message":"A non-trusted (not operational) error was detect, this will likely to kill the process - please analyze this issue and act thoughtfully","level":"debug"}
+{"message":"Error handler is reporting a new error: Error: Redis connection to 127.0.0.1:6379 failed - connect ECONNREFUSED 127.0.0.1:6379","level":"debug"}
+{"message":"Error handler concluded that this error is not trusted thus exiting","level":"debug"}
+{"message":"New request /api/historyManagement","level":"info"}
+{"message":"Uncaught exception was caught with the following error Error: Redis connection to 127.0.0.1:6379 failed - connect ECONNREFUSED 127.0.0.1:6379","level":"debug"}
+{"message":"A non-trusted (not operational) error was detect, this will likely to kill the process - please analyze this issue and act thoughtfully","level":"debug"}
+{"message":"Error handler is reporting a new error: Error: Redis connection to 127.0.0.1:6379 failed - connect ECONNREFUSED 127.0.0.1:6379","level":"debug"}
+{"message":"Error handler concluded that this error is not trusted thus exiting","level":"debug"}
+{"message":"Uncaught exception was caught with the following error Error: Redis connection to 127.0.0.1:6379 failed - connect ECONNREFUSED 127.0.0.1:6379","level":"debug"}
+{"message":"A non-trusted (not operational) error was detect, this will likely to kill the process - please analyze this issue and act thoughtfully","level":"debug"}
+{"message":"Error handler is reporting a new error: Error: Redis connection to 127.0.0.1:6379 failed - connect ECONNREFUSED 127.0.0.1:6379","level":"debug"}
+{"message":"Error handler concluded that this error is not trusted thus exiting","level":"debug"}
+{"message":"Uncaught exception was caught with the following error Error: Redis connection to 127.0.0.1:6379 failed - connect ECONNREFUSED 127.0.0.1:6379","level":"debug"}
+{"message":"A non-trusted (not operational) error was detect, this will likely to kill the process - please analyze this issue and act thoughtfully","level":"debug"}
+{"message":"Error handler is reporting a new error: Error: Redis connection to 127.0.0.1:6379 failed - connect ECONNREFUSED 127.0.0.1:6379","level":"debug"}
+{"message":"Error handler concluded that this error is not trusted thus exiting","level":"debug"}
+{"message":"Uncaught exception was caught with the following error Error: Redis connection to 127.0.0.1:6379 failed - connect ECONNREFUSED 127.0.0.1:6379","level":"debug"}
+{"message":"A non-trusted (not operational) error was detect, this will likely to kill the process - please analyze this issue and act thoughtfully","level":"debug"}
+{"message":"Error handler is reporting a new error: Error: Redis connection to 127.0.0.1:6379 failed - connect ECONNREFUSED 127.0.0.1:6379","level":"debug"}
+{"message":"Error handler concluded that this error is not trusted thus exiting","level":"debug"}
+{"message":"New request /api/historyManagement","level":"info"}
