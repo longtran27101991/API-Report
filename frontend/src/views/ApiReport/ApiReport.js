@@ -207,7 +207,7 @@ class ApiReport extends Component {
         <div className="card">
           <div className="card-header">
             <CardTitle>
-              API REPORT <Button onClick={()=>{window.location.reload()}}>Refresh</Button> </CardTitle>
+              API REPORT <Button onClick={()=>{window.location.reload()}} style={{marginLeft:"10px"}}> <i className="fa fa-refresh"></i> </Button> </CardTitle>
           </div>
           <CardBody>
             <div>
