@@ -10,7 +10,7 @@ import 'rc-pagination/assets/index.css';
 import client from "../../api";
 
 
-// import moment from "moment";
+import moment from "moment";
 
 class ApiReport extends Component {
   constructor(props) {
@@ -28,7 +28,9 @@ class ApiReport extends Component {
       // status:"Status",
       statusComboBox:[],
       // api:"Select API",
-      apiCombobox:[]
+      apiCombobox:[],
+      from:"",
+      to:""
     };
   }
 
@@ -67,7 +69,7 @@ class ApiReport extends Component {
   getTableRow(index, data) {
     return (
       <tr key={index}>
-        <td><p>{data.Request_time}</p></td>
+        <td><p>{moment(data.Request_time*1).format("YYYY-MM-DD")}</p></td>
         <td><p>{data.API}</p></td>
         <td><p>{data.Uri}</p></td>
         <td><p>{data.Method}</p></td>
@@ -81,6 +83,32 @@ class ApiReport extends Component {
   onChangeRowPerPage = async(e)=>{
     await this.setState({maxRow:e.target.value});
     this.setState({totalPage:this.getTotalPage(this.state.dataTable.length),currentPage:1});
+  }
+  
+  onChangeDate = async()=>{
+
+    document.querySelector("#status").value = "Status";
+    document.querySelector("#api").value = "Select API";
+
+    let min = Date.parse(this.state.from);
+    let max = Date.parse(this.state.to);
+
+    let searchTable =  this.state.dataTable.filter(
+      row => (row.Request_time ) >= min && (row.Request_time ) <= max
+    ) 
+      console.log(this.state.dataTable[0].Request_time);
+    await this.setState({searchTable:searchTable,view:"search"});
+    this.setState({totalPage:this.getTotalPage(searchTable.length),currentPage:1});
+
+  }
+
+  onChangeFrom = (e)=>{
+    this.setState({from:e.target.value});
+  }
+
+  onChangeTo = async(e)=>{
+    await this.setState({to:e.target.value});
+    this.onChangeDate()
   }
 
   // onChangeSearch = (changeEvent, type) => {
@@ -102,6 +130,8 @@ class ApiReport extends Component {
   //   this.setState({type: tmp});
   // };
 
+
+
   onChangeStatusComboBox = async(e)=>{
     document.querySelector("#api").value = "Select API";
     document.querySelector("#from").value = "";
@@ -118,7 +148,6 @@ class ApiReport extends Component {
   }
 
   onChangeAPIComboBox = async(e)=>{
-    
     document.querySelector("#status").value = "Status";
     document.querySelector("#from").value = "";
     document.querySelector("#to").value = "";
@@ -208,11 +237,13 @@ class ApiReport extends Component {
                       id="from"
                        placeholder="From" onChange={(e)=>{this.onChangeSearch(e)}}/> */}
                        <Input type = "date" id="from"
+                       onChange={(e)=>this.onChangeFrom(e)}
                       //  placeholder="From" onChange={(e)=>{this.onChangeSearch(e)}}
                        />
                     </Col>
                     <Col>
                       <Input type = "date" id="to"
+                      onChange={(e)=>this.onChangeTo(e)}
                       //  placeholder="From" onChange={(e)=>{this.onChangeSearch(e)}}
                        />
                       {/* <Input type = "Text"
