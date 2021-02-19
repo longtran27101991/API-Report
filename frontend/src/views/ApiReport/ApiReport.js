@@ -1,30 +1,16 @@
 import React, {Component} from "react";
 import {
   Input,
-  CardTitle,
-  Button,
-  Modal,
-  ModalHeader,
-  ModalBody,
-  ModalFooter, CardBody, Table,
+  CardTitle,Button,
+  Row, Col,
+  CardBody, Table,
 } from "reactstrap";
 import Pagination from 'rc-pagination';
 import 'rc-pagination/assets/index.css';
 import client from "../../api";
 
-// const TOKEN = 'access_token';
-// const jwtDecode = require('jwt-decode');
-// const token = localStorage.getItem(TOKEN);
-// const decoded = jwtDecode(token);
-import moment from "moment";
 
-const MAX_ROW = 10;
-
-let text = "";
-
-function getTotalPage(totalLength) {
-  return Math.floor((totalLength - 1) / MAX_ROW) + 1;
-};
+// import moment from "moment";
 
 class ApiReport extends Component {
   constructor(props) {
@@ -37,49 +23,39 @@ class ApiReport extends Component {
       dataTable: [],
       searchTable: [],
       view: "",
-      selectedImportFile: null,
-      selectedImportFileName: "",
-      checkImport: true,
-      modal: false,
-      wordEdit: "",
-      selectedKey: "",
-      selectedEditType: "",
-
-      //modal error
-      modalError: false,
-      modalErrorText: "",
+      maxRow:10,
+      rowPerPage:[],
+      // status:"Status",
+      statusComboBox:[],
+      // api:"Select API",
+      apiCombobox:[]
     };
-    this.toggle = this.toggle.bind(this);
+  }
+
+  getTotalPage = (totalLength)=>{
+    return Math.floor((totalLength - 1) / this.state.maxRow) + 1;
   }
 
   componentDidMount() {
-    if (this.props.match.params.id) {
-      client.get('/api/historyManagement/' + this.props.match.params.id)
-        .then((response) => {
-            console.log(response.data);
-            this.setState({
-              dataTable: response.data,
-              totalPage: getTotalPage(response.data.length)
-            });
-          }
-        )
-        .catch((error) => {
-          console.log(error)
-        });
-    } else {
       client.get('/api/historyManagement')
         .then((response) => {
+          var getStatus = response.data.data.map((data)=>data.Status)
+          var statusComboBox = [...new Set(getStatus)];
+          var getAPI = response.data.data.map((data)=>data.API)
+          var apiCombobox = [...new Set(getAPI)];
+
             this.setState({
-              dataTable: response.data,
-              totalPage: getTotalPage(response.data.length)
+              dataTable: response.data.data,
+              totalPage: this.getTotalPage(response.data.data.length),
+              rowPerPage:[1,2,3,4,5,6,7,8,9,10],
+              statusComboBox:statusComboBox,
+              apiCombobox:apiCombobox
             });
           }
         )
         .catch((error) => {
           console.log(error)
         });
-    }
-
     window.addEventListener("resize", this.resize.bind(this));
     this.resize();
   }
@@ -88,113 +64,92 @@ class ApiReport extends Component {
     this.setState({is_mobile: window.innerWidth <= 1000});
   }
 
-  toggle = (e, key, type) => {
-    this.setState({selectedEditType: type});
-    this.setState(prevState => ({
-      modal: !prevState.modal
-    }));
-    this.setState({selectedKey: key});
-  };
-
-  toggleError = () => {
-    this.setState(prevState => ({
-      modalError: !prevState.modalError
-    }));
-  };
-
-  onChangeEdit = changeEvent => {
-    const wordEdit = changeEvent.target.value;
-    this.setState({wordEdit});
-  };
-
   getTableRow(index, data) {
-    console.log(data.is_real);
-    let video_name = "";
-    if (data.url_video.indexOf("/") > -1) {
-      const pieces = data.url_video.split("/");
-      video_name = pieces[pieces.length - 1];
-    } else {
-      video_name = data.url_video;
-    }
     return (
       <tr key={index}>
-        <td><a href={"/checkvideo/" + data._id}>{video_name}</a></td>
-        <td>{data.is_real + ""}</td>
-        <td>{data.type_fake}</td>
-        <td>{moment(data.created_time).format('DD/MM/YY hh:mm')}</td>
-        <td>{moment(data.updated_time).format('DD/MM/YY hh:mm')}</td>
-
+        <td><p>{data.Request_time}</p></td>
+        <td><p>{data.API}</p></td>
+        <td><p>{data.Uri}</p></td>
+        <td><p>{data.Method}</p></td>
+        <td><p>{data.Request_body}</p></td>
+        <td><p>{data.Status}</p></td>
+        <td><p>{data.Latency}</p></td>
       </tr>
     )
-
   }
 
-  editSelectedRow = (e, key, type) => {
-    let word = this.state.wordEdit;
-    if (word) {
-      this.handleEditRow(type, word, key);
-      this.toggle();
-    } else {
-      let modalErrorText = "Bạn vẫn còn trường chưa điền thông tin!";
-      this.setState({modalErrorText});
-      this.toggleError();
+  onChangeRowPerPage = async(e)=>{
+    await this.setState({maxRow:e.target.value});
+    this.setState({totalPage:this.getTotalPage(this.state.dataTable.length),currentPage:1});
+  }
+
+  // onChangeSearch = (changeEvent, type) => {
+  //   const searchWord = changeEvent.target.value.toString();
+  //   const tmp = this.state;
+  //   if (!searchWord) {
+  //     tmp.search = "";
+  //     tmp.searchTable = [];
+  //     tmp.view = "";
+  //   } else {
+  //     tmp.search = searchWord;
+  //     const searchTable = this.filterItems(searchWord, tmp.dataTable);
+  //     tmp.searchTable = searchTable;
+  //     tmp.view = "search";
+  //     tmp.totalPage = this.getTotalPage(tmp.searchTable.length);
+  //     tmp.currentPage = 1;
+  //   }
+    
+  //   this.setState({type: tmp});
+  // };
+
+  onChangeStatusComboBox = async(e)=>{
+    document.querySelector("#api").value = "Select API";
+    document.querySelector("#from").value = "";
+    document.querySelector("#to").value = "";
+
+    if(e.target.value.toString()==="Status"){
+      this.setState({view:"",totalPage:this.getTotalPage(this.state.dataTable.length),searchTable:[]})
     }
-  };
-
-  // handleEditRow = (type, word, id) => {
-  // };
-
-  // deleteSelectedRow = (e, key, type) => {
-  //   this.handleDeleteRow(type, key);
-  // };
-
-  // handleDeleteRow = (type, id) => {
-
-  // };
-
-  onChangeSearch = (changeEvent, type) => {
-    const searchWord = changeEvent.target.value.toString();
-    const tmp = this.state;
-    if (!searchWord) {
-      tmp.search = "";
-      tmp.searchTable = [];
-      tmp.view = "";
-    } else {
-      tmp.search = searchWord;
-      const searchTable = this.filterItems(searchWord, tmp.dataTable);
-      tmp.searchTable = searchTable;
-      tmp.view = "search";
+    else{
+      const searchTable = this.filterStatus(e.target.value.toString(), this.state.dataTable);
+      await this.setState({searchTable:searchTable,view:"search",});
+      this.setState({totalPage:this.getTotalPage(searchTable.length),currentPage:1})
     }
-    tmp.totalPage = getTotalPage(tmp.dataTable.length);
-    tmp.currentPage = 1;
-    this.setState({type: tmp});
-  };
+  }
 
-  filterItems = (query, data) => {
+  onChangeAPIComboBox = async(e)=>{
+    
+    document.querySelector("#status").value = "Status";
+    document.querySelector("#from").value = "";
+    document.querySelector("#to").value = "";
+
+    if(e.target.value.toString()==="Select API"){
+      this.setState({view:"",totalPage:this.getTotalPage(this.state.dataTable.length),searchTable:[]})
+    }
+    else{
+      const searchTable = this.filterAPI(e.target.value.toString(), this.state.dataTable);
+      await this.setState({searchTable:searchTable,view:"search",});
+      this.setState({totalPage:this.getTotalPage(searchTable.length),currentPage:1})
+    }
+  }
+
+
+  filterStatus = (query, data)=>{
     return data.filter((el) =>
-      el.url_video.toString().toLowerCase().indexOf(query.toLowerCase()) > -1
+    el.Status.toString().toLowerCase().indexOf(query.toLowerCase()) > -1
     );
-  };
+  }
 
+  filterAPI = (query, data)=>{
+    return data.filter((el) =>
+    el.API.toString().toLowerCase().indexOf(query.toLowerCase()) > -1
+    );
+  }
 
-  addKeyword = keywordSubmit => {
-    keywordSubmit.preventDefault();
-    const type = keywordSubmit.target.id;
-    let formValid = false;
-    const tmp = this.state[type];
-    const keyword = tmp.keyword;
-    if (keyword) formValid = true;
-    if (formValid) {
-      this.handleFormAddKeyword(type, keyword);
-    } else {
-      let modalErrorText = "Bạn vẫn còn trường chưa điền thông tin!";
-      this.setState({modalErrorText});
-      this.toggleError();
-    }
-  };
-
-  // handleFormAddKeyword = (type, keyword) => {
-
+  // filterItems = (query, data) => {
+  //   return data.filter((el) =>
+  //     el.Request_time.toString().toLowerCase().indexOf(query.toLowerCase()) > -1
+  //   );
   // };
 
   handlePageClick = (pageClick) => {
@@ -205,57 +160,16 @@ class ApiReport extends Component {
   switchView = () => {
     if (this.state.view === "search") {
       return (
-        this.state.searchTable.filter((data, index) => (index < (this.state.currentPage * MAX_ROW)) && (index >= (this.state.currentPage * MAX_ROW) - MAX_ROW)).map((data, index) =>
+        this.state.searchTable.filter((data, index) => (index < (this.state.currentPage * this.state.maxRow)) && (index >= (this.state.currentPage * this.state.maxRow) - this.state.maxRow)).map((data, index) =>
           this.getTableRow(index, data))
       )
     } else {
       return (
-        this.state.dataTable.filter((data, index) => (index < (this.state.currentPage * MAX_ROW)) && (index >= (this.state.currentPage * MAX_ROW) - MAX_ROW)).map((data, index) =>
+        this.state.dataTable.filter((data, index) => (index < (this.state.currentPage * this.state.maxRow)) && (index >= (this.state.currentPage * this.state.maxRow) - this.state.maxRow)).map((data, index) =>
           this.getTableRow(index, data)
         )
       )
     }
-  };
-
-  handleImport = event => {
-    event.preventDefault();
-    const type = event.target.id;
-    let tmp = this.state[type];
-    let importText = "";
-    if (tmp.selectedImportFile) {
-      importText = text;
-    }
-    if (importText) {
-      let splitText = importText.split("\n");
-      for (let i = 0; i < splitText.length; i++) {
-        let keyword = splitText[i];
-        this.handleFormImportKeyword(type, keyword);
-      }
-      tmp.selectedImportFile = null;
-      tmp.selectedImportFileName = "";
-      tmp.checkImport = true;
-      this.setState({type: tmp});
-    } else {
-      let modalErrorText = "Bạn vẫn còn trường chưa điền thông tin!";
-      this.setState({modalErrorText});
-      this.toggleError();
-    }
-  };
-
-  handleFormImportKeyword = (type, keyword) => {
-  };
-
-  handleSelectedFile = (event, type) => {
-    let tmp = this.state[type];
-    tmp.selectedImportFile = event.target.files[0];
-    tmp.selectedImportFileName = event.target.files[0].name;
-    this.setState({type: tmp});
-    let reader = new FileReader();
-    reader.onload = function () {
-      text = reader.result;
-    };
-    reader.readAsText(event.target.files[0]);
-    event.target.value = "";
   };
 
   render() {
@@ -263,34 +177,52 @@ class ApiReport extends Component {
       <div className="animated fadeIn">
         <div className="card">
           <div className="card-header">
-            <CardTitle>API REPORT</CardTitle>
+            <CardTitle>
+              API REPORT <Button onClick={()=>{window.location.reload()}}>Refresh</Button> </CardTitle>
           </div>
           <CardBody>
             <div>
-              <div className="float-left">
-
-                <div className="input-group" >
+                <div>
                   {/* repair */}
-                  {/* <div className="input-group-prepend">
-                    <div className="input-group-text"><i className="fa fa-search"></i></div>
-                  </div>
-                  <Input className="form-control-range" name="" type="text" placeholder="email"
-                         value={this.state.search} onChange={(e) => this.onChangeSearch(e)}/> */}
-                  <Input type = "select" style={{marginLeft:"20px"}}>
-                    <option>Status</option>
-                  </Input>
-                    
-                  <Input type = "select" style={{marginLeft:"20px"}}>
-                    <option>Select API</option>
-                  </Input>
-
-                  <Input type = "Text" placeHolder="From" style={{marginLeft:"20px"}} />
-                  <Input type = "Text" placeHolder="To" style={{marginLeft:"20px"}} />
+                  <Row>
+                    <Col>
+                      <Input type = "select" 
+                      id="status"
+                      // value={this.state.status} 
+                      onChange={(e)=>this.onChangeStatusComboBox(e)} >
+                      <option>Status</option>
+                      {this.state.statusComboBox.map(row => <option key={row} value={row}>{row}</option>)}
+                      </Input>
+                    </Col>
+                    <Col>
+                      <Input type = "select" 
+                      id = "api"
+                      // value={this.state.api} 
+                      onChange={(e)=>this.onChangeAPIComboBox(e)}>
+                      <option>Select API</option>
+                      {this.state.apiCombobox.map(row => <option key={row} value={row}>{row}</option>)}
+                      </Input>
+                    </Col>
+                    <Col>
+                      {/* <Input type = "Text"
+                      id="from"
+                       placeholder="From" onChange={(e)=>{this.onChangeSearch(e)}}/> */}
+                       <Input type = "date" id="from"
+                      //  placeholder="From" onChange={(e)=>{this.onChangeSearch(e)}}
+                       />
+                    </Col>
+                    <Col>
+                      <Input type = "date" id="to"
+                      //  placeholder="From" onChange={(e)=>{this.onChangeSearch(e)}}
+                       />
+                      {/* <Input type = "Text"
+                      id="to"
+                       placeholder="To" /> */}
+                    </Col>
+                  </Row>
                 </div>
 
               </div>
-
-            </div>
           </CardBody>
           <CardBody className="overflow-auto">
             <Table striped bordered hover size="lg">
@@ -302,7 +234,6 @@ class ApiReport extends Component {
                 <th>Method</th>
                 <th>Request body</th>
                 <th>Status</th>
-                <th>Request body</th>
                 <th>Latency (ms)</th>
               </tr>
               </thead>
@@ -313,44 +244,36 @@ class ApiReport extends Component {
               }
             </Table>
             {/* repair */}
-            <span>rows per page</span>
-            <Input type = "select" style={{width:"70px", margin:"10px"}}>
-              <option>10</option>
-            </Input>
-
-            <Pagination onChange={(pageClick) => this.handlePageClick(pageClick)}
-                        current={this.state.currentPage}
-                        total={this.state.totalPage * 10}/>
+            <div>
+              <Row>
+                <Col>
+                  <Row>
+                    <Col>
+                      <p style={{marginTop:'15px'}}>Rows per page</p>
+                    </Col>
+                    <Col>
+                      <Input type = "select" value={this.state.maxRow} onChange={(e)=>{this.onChangeRowPerPage(e)}} style={{width:"70px",margin:"10px"}}>
+                      {this.state.rowPerPage.map(row => <option key={row} value={row}>{row}</option>)}
+                      </Input>
+                    </Col>
+                    <Col>
+                      <p style={{margin:"15px"}}>
+                          {this.state.currentPage*this.state.maxRow-this.state.maxRow+1} - {this.state.currentPage*this.state.maxRow>(this.state.view==="search"?this.state.searchTable.length:this.state.dataTable.length)?(this.state.view==="search"?this.state.searchTable.length:this.state.dataTable.length):this.state.currentPage*this.state.maxRow} of {this.state.view==="search"?this.state.searchTable.length:this.state.dataTable.length}
+                        </p>
+                    </Col>
+                  </Row>
+                </Col>
+                <Col>
+                  <Pagination onChange={(pageClick) => this.handlePageClick(pageClick)}
+                  style={{float:"right",marginTop:'15px'}}
+                  current={this.state.currentPage}
+                  total={this.state.totalPage * 10}/>
+                </Col>
+              </Row> 
+            </div>
           </CardBody>
         </div>
 
-        <Modal isOpen={this.state.modal} toggle={this.toggle}>
-          <ModalHeader toggle={this.toggle}>Edit Selected Word</ModalHeader>
-          <ModalBody>
-            <Input value={this.state.wordEdit} onChange={this.onChangeEdit} type="text"/>
-          </ModalBody>
-          <ModalFooter>
-            <Button color="primary"
-                    onClick={(e) => this.editSelectedRow(e, this.state.selectedKey, this.state.selectedEditType)}>Edit</Button>{' '}
-            <Button color="secondary" onClick={this.toggle}>Cancel</Button>
-          </ModalFooter>
-        </Modal>
-
-        <Modal
-          isOpen={this.state.modalError}
-          toggle={this.toggleError}
-          className={this.props.className}
-        >
-          <ModalHeader toggle={this.toggleError}>Thông Báo</ModalHeader>
-          <ModalBody>
-            {this.state.modalErrorText}
-          </ModalBody>
-          <ModalFooter>
-            <Button color="secondary" onClick={this.toggleError}>
-              Hủy
-            </Button>
-          </ModalFooter>
-        </Modal>
 
       </div>
     );
