@@ -1,128 +1,108 @@
 var express = require('express');
 var router = express.Router();
+var elasticsearch = require('elasticsearch');
+const awsHttpClient = require('http-aws-es');
+const {Client} = require('@elastic/elasticsearch')
+// const fetch = require('node-fetch');
 
 router.get('/', function (req, res, next) {
-   let data =[{
-        // Request_time:"2021-02-15",
-        Request_time:"1562869487000",
-        API:"Vision",
-        Uri:"vision/fpt",
-        Method:"POST",
-        Request_body:"request body data",
-        Status:"200",
-        Latency:"7500"
-    },
-    {
-        // Request_time:"2021-02-15",
-        Request_time:"1569863577000",
-        API:"Vision",
-        Uri:"vision/fpt",
-        Method:"POST",
-        Request_body:"request body data",
-        Status:"200",
-        Latency:"7500" 
-    },
-    {
-        // Request_time:"2022-02-15",
-        Request_time:"1529904463000",
-        API:"hmi",
-        Uri:"hmi/fpt",
-        Method:"POST",
-        Request_body:"request body data",
-        Status:"200",
-        Latency:"4800"
-    },
-    {
-        // Request_time:"2022-02-15",
-        Request_time:"1569905303000",
-        API:"hmi",
-        Uri:"hmi/fpt",
-        Method:"POST",
-        Request_body:"request body data",
-        Status:"200",
-        Latency:"4800"
-    },
-    {
-        // Request_time:"2020-02-15",
-        Request_time:"1570442582000",
-        API:"asr",
-        Uri:"asr/fpt",
-        Method:"POST",
-        Request_body:"request body data",
-        Status:"400",
-        Latency:"0"
-    },
-    {
-        // Request_time:"2020-02-15",
-        Request_time:"1569849971000",
-        API:"asr",
-        Uri:"asr/fpt",
-        Method:"POST",
-        Request_body:"request body data",
-        Status:"400",
-        Latency:"0"
-    },
-    {
-        // Request_time:"2021-02-15",
-        Request_time:"1569869487000",
-        API:"Vision",
-        Uri:"vision/fpt",
-        Method:"POST",
-        Request_body:"request body data",
-        Status:"200",
-        Latency:"7500"
-    },
-    {
-        // Request_time:"2021-02-15",
-        Request_time:"1569869577000",
-        API:"Vision",
-        Uri:"vision/fpt",
-        Method:"POST",
-        Request_body:"request body data",
-        Status:"200",
-        Latency:"7500" 
-    },
-    {
-        // Request_time:"2022-02-15",
-        Request_time:"1569904463000",
-        API:"hmi",
-        Uri:"hmi/fpt",
-        Method:"POST",
-        Request_body:"request body data",
-        Status:"200",
-        Latency:"4800"
-    },
-    {
-        // Request_time:"2022-02-15",
-        Request_time:"1564866667000",
-        API:"hmi",
-        Uri:"hmi/fpt",
-        Method:"POST",
-        Request_body:"request body data",
-        Status:"200",
-        Latency:"4800"
-    },
-    {
-        // Request_time:"2020-02-15",
-        Request_time:"1564866667000",
-        API:"asr",
-        Uri:"asr/fpt",
-        Method:"POST",
-        Request_body:"request body data",
-        Status:"400",
-        Latency:"0"
-    },
-    {
-        // Request_time:"2020-02-15",
-        Request_time:"1469849971000",
-        API:"asr",
-        Uri:"asr/fpt",
-        Method:"POST",
-        Request_body:"request body data",
-        Status:"400",
-        Latency:"0"
-    },]
-    res.json({data:data});
+    // var auth = 'kibanaro:zN95CNXHuL8wHFhiYGWiBdkRD';
+    // var port = 9201;
+    // var protocol = 'http';
+    // var hostUrls = [
+    //     'ec2-3-1-125-56.ap-southeast-1.compute.amazonaws.com'
+    // ];
+    //
+    // var hosts = hostUrls.map(function (host) {
+    //     return {
+    //         protocol: protocol,
+    //         host: host,
+    //         port: port,
+    //         auth: auth
+    //     };
+    // });
+
+
+    const client = new Client({
+        node: 'http://ec2-3-1-125-56.ap-southeast-1.compute.amazonaws.com:9201',
+        auth: {
+            username: 'ekyc_vpbank',
+            password: 'R87L3x3bozGsdM3sq9UTOtnsBn9Ch4Fb'
+        }
+    });
+
+
+    // var client = new elasticsearch.Client({
+    //     hosts: hosts
+    // });
+
+
+    // let client = elasticsearch.Client({
+    //     host: 'ec2-3-1-125-56.ap-southeast-1.compute.amazonaws.com',
+    //     connectionClass: awsHttpClient,
+    //     auth: {
+    //         username: "ekyc_vpbank",
+    //         password: "R87L3x3bozGsdM3sq9UTOtnsBn9Ch4Fb",
+    //     },
+    //     });
+
+    // const client = new elasticsearch.Client({
+    //     node: 'ec2-3-1-125-56.ap-southeast-1.compute.amazonaws.com',
+    //     auth: {
+    //         username: "ekyc_vpbank",
+    //         password: "R87L3x3bozGsdM3sq9UTOtnsBn9Ch4Fb",
+    //     },
+    // });
+
+
+// callback API
+    client.search({
+        index: 'kong-12-*',
+        body: {
+            "size": 1000,
+            "_source": ["@timestamp", "_id", "consumer.project", "service.name", "response.status", "response.body", "_source"],
+            "sort": [
+                {
+                    "@timestamp": {
+                        "order": "asc"
+                    }
+                }
+            ],
+            "query": {
+                "bool": {
+                    "must": [
+                        {
+                            "prefix": {
+                                "service.name": "dmp.facesearch.v2"
+                            }
+                        },
+                        {
+                            "prefix": {
+                                "request.uri": "/dmp/facesearch/v2/search"
+                            }
+                        },
+                        {
+                            "range": {
+                                "@timestamp": {
+                                    "gte": 1590992000000,
+                                    "lt": 1597027697134
+                                }
+                            }
+                        },
+                        {
+                            "term": {
+                                "consumer.username": "quanglh4@vpbank.com.vn"
+                            }
+                        }
+
+                    ]
+                }
+            }
+        }
+    }, (err, result) => {
+        if (err) console.log(err)
+        console.log(result.body.hits.hits);
+    })
 });
 
 // router.get('/:id', function (req, res, next) {
