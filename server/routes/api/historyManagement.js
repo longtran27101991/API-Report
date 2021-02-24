@@ -6,6 +6,7 @@ const {Client} = require('@elastic/elasticsearch')
 // const fetch = require('node-fetch');
 
 router.get('/', function (req, res, next) {
+    var allRecords = [];
     // var auth = 'kibanaro:zN95CNXHuL8wHFhiYGWiBdkRD';
     // var port = 9201;
     // var protocol = 'http';
@@ -58,8 +59,8 @@ router.get('/', function (req, res, next) {
 // callback API
     client.search({
         index: 'kong-12-*',
+        scroll: '10s',
         body: {
-            "size": 1000,
             "_source": ["@timestamp", "_id", "consumer.project", "service.name", "response.status", "response.body", "_source"],
             "sort": [
                 {
@@ -84,7 +85,7 @@ router.get('/', function (req, res, next) {
                         {
                             "range": {
                                 "@timestamp": {
-                                    "gte": 1590992000000,
+                                    "gte": 1596914650,
                                     "lt": 1597027697134
                                 }
                             }
@@ -99,10 +100,82 @@ router.get('/', function (req, res, next) {
                 }
             }
         }
-    }, (err, result) => {
-        if (err) console.log(err)
-        console.log(result.body.hits.hits);
-    })
+    }, function getMoreUntilDone(error, response) {
+        // collect all the records
+        response.body.hits.hits.forEach(function (hit) {
+            allRecords.push(hit);
+        });
+
+        if (response.body.hits.total !== allRecords.length) {
+            // now we can call scroll over and over
+            client.scroll({
+                scrollId: response._scroll_id,
+                scroll: '10s'
+            }, getMoreUntilDone);
+        } else {
+            console.log('all done', allRecords);
+        }
+    });
+
+
+    // client.search({
+    //     index: 'kong-12-*',
+    //     scroll: '30s',
+    //     body: {
+    //         "_source": ["@timestamp", "_id", "consumer.project", "service.name", "response.status", "response.body", "_source"],
+    //         "sort": [
+    //             {
+    //                 "@timestamp": {
+    //                     "order": "asc"
+    //                 }
+    //             }
+    //         ],
+    //         "query": {
+    //             "bool": {
+    //                 "must": [
+    //                     {
+    //                         "prefix": {
+    //                             "service.name": "dmp.facesearch.v2"
+    //                         }
+    //                     },
+    //                     {
+    //                         "prefix": {
+    //                             "request.uri": "/dmp/facesearch/v2/search"
+    //                         }
+    //                     },
+    //                     {
+    //                         "range": {
+    //                             "@timestamp": {
+    //                                 "gte": 1590992000000,
+    //                                 "lt": 1597027697134
+    //                             }
+    //                         }
+    //                     },
+    //                     {
+    //                         "term": {
+    //                             "consumer.username": "quanglh4@vpbank.com.vn"
+    //                         }
+    //                     }
+    //
+    //                 ]
+    //             }
+    //         }
+    //     }
+    // }, (err, result) => {
+    //     result.hits.hits.forEach(function (hit) {
+    //         allRecords.push(hit);
+    //     });
+    //
+    //     if (result.hits.total !== allRecords.length) {
+    //         // now we can call scroll over and over
+    //         client.scroll({
+    //             scrollId: result._scroll_id,
+    //             scroll: '30s'
+    //         }, getMoreUntilDone);
+    //     } else {
+    //         console.log('all done', allRecords);
+    //     }
+    // })
 });
 
 // router.get('/:id', function (req, res, next) {

@@ -84,7 +84,7 @@ class ApiReport extends Component {
     await this.setState({maxRow:e.target.value});
     this.setState({totalPage:this.getTotalPage(this.state.dataTable.length),currentPage:1});
   }
-  
+
   onChangeDate = async()=>{
 
     document.querySelector("#status").value = "Status";
@@ -95,7 +95,7 @@ class ApiReport extends Component {
 
     let searchTable =  this.state.dataTable.filter(
       row => (row.Request_time ) >= min && (row.Request_time ) <= max
-    ) 
+    )
       console.log(this.state.dataTable[0].Request_time);
     await this.setState({searchTable:searchTable,view:"search"});
     this.setState({totalPage:this.getTotalPage(searchTable.length),currentPage:1});
@@ -126,7 +126,7 @@ class ApiReport extends Component {
   //     tmp.totalPage = this.getTotalPage(tmp.searchTable.length);
   //     tmp.currentPage = 1;
   //   }
-    
+
   //   this.setState({type: tmp});
   // };
 
@@ -215,18 +215,18 @@ class ApiReport extends Component {
                   {/* repair */}
                   <Row>
                     <Col>
-                      <Input type = "select" 
+                      <Input type = "select"
                       id="status"
-                      // value={this.state.status} 
+                      // value={this.state.status}
                       onChange={(e)=>this.onChangeStatusComboBox(e)} >
                       <option>Status</option>
                       {this.state.statusComboBox.map(row => <option key={row} value={row}>{row}</option>)}
                       </Input>
                     </Col>
                     <Col>
-                      <Input type = "select" 
+                      <Input type = "select"
                       id = "api"
-                      // value={this.state.api} 
+                      // value={this.state.api}
                       onChange={(e)=>this.onChangeAPIComboBox(e)}>
                       <option>Select API</option>
                       {this.state.apiCombobox.map(row => <option key={row} value={row}>{row}</option>)}
@@ -300,7 +300,7 @@ class ApiReport extends Component {
                   current={this.state.currentPage}
                   total={this.state.totalPage * 10}/>
                 </Col>
-              </Row> 
+              </Row>
             </div>
           </CardBody>
         </div>
